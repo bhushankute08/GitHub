@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: my-apache
+    ports:
+      - "8082:80"   # Host port 8082 maps to container port 80
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/   # Mount local html folder for live updates
+    restart: always
